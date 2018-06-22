@@ -22,16 +22,20 @@ class App extends Component {
   render() {
     return (
       <div className = "App">
-        <h1 className = "App-title">Countdown to { this.state.deadline }</h1>
+      <h1 className = "App-title">Countdown to { this.state.deadline }</h1>
+        { /* Clock App - Passing the deadline */}
         <Clock
           deadline = { this.state.deadline }
         />
+      {/* Form used for collecting the date should it change */}
         <Form inline>
           <FormControl
                 className = "deadline-input"
                 placeholder = "New Date"
-                onChange = {event => this.setState({newDeadline: event.target.value})}/>
-          <Button onClick={() => this.changeDeadline()}>
+                {/* Storing the potential new Deadline in the state for future use */}
+                onChange = { event => this.setState({ newDeadline: event.target.value }) }/>
+              {/* Copying over the stored information from newDeadline to Deadline */}
+          <Button onClick={ () => this.changeDeadline() }>
             Submit
           </Button>
         </Form>
