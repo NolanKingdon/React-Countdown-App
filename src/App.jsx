@@ -14,7 +14,9 @@ class App extends Component {
   }
 
   changeDeadline() {
-    this.setState({ deadline: this.state.newDeadline });
+    this.setState({
+      deadline: this.state.newDeadline
+    });
   }
 
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
       <div className = "App">
         <h1 className = "App-title">Countdown to { this.state.deadline }</h1>
         <Clock
-          deadline={this.state.deadline}
+          deadline = { this.state.deadline }
         />
         <Form inline>
           <FormControl
